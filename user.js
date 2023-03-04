@@ -254,6 +254,11 @@ user_pref("layout.css.has-selector.enabled", true);
 ****************************************************************************/
 // Enter your personal prefs below this line:
 
+user_pref("browser.warnOnQuitShortcut", false);
+user_pref("browser.aboutConfig.showWarning", false);
+user_pref("mousewheel.with_meta.action", 1);
+user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
+
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
