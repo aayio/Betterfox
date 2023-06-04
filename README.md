@@ -1,6 +1,5 @@
 ![GitHub Maintained](https://img.shields.io/badge/open%20source-yes-orange)
 ![GitHub Maintained](https://img.shields.io/badge/maintained-yes-yellow)
-[![GitHub closed issues](https://badgen.net/github/closed-issues/yokoffing/Betterfox?color=purple)](https://github.com/yokoffing/Betterfox/issues?q=is%3Aissue+is%3Aclosed)
 [![Visitors](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fyokoffing%2FBetter-Fox&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # Betterfox
@@ -54,13 +53,14 @@ Apply preferences from the [common overrides](https://github.com/yokoffing/Bette
 ### User Comments
 - [1](https://old.reddit.com/r/firefox/comments/xsw0zt/comment/iqo0dbv/?context=3)
 [2](https://old.reddit.com/r/browsers/comments/y7w57n/which_browser_do_you_use_on_your_devices/it30hqi/?context=3)
-[3](https://www.troddit.com/r/firefox/comments/z5auzi/firefox_not_properly_usingrecognizing_gpu_poor/iy0kru3)
-[4](https://www.troddit.com/r/firefox/comments/z5auzi/firefox_not_properly_usingrecognizing_gpu_poor/iy36hyz)
+[3](https://old.reddit.com/r/firefox/comments/z5auzi/firefox_not_properly_usingrecognizing_gpu_poor/iy0kru3)
+[4](https://old.reddit.com/r/firefox/comments/z5auzi/firefox_not_properly_usingrecognizing_gpu_poor/iy36hyz)
 [5](https://old.reddit.com/r/firefox/comments/1030fri/why_does_firefox_feel_slowchoppy/j2wu4ow/)
 [6](https://old.reddit.com/r/pcmasterrace/comments/zwioe1/what_browser_will_you_be_using_in_2023_please/j1wmbxo/)
 [7](https://old.reddit.com/r/firefox/comments/zodxzx/performance_optimizations_for_firefox/j0memta/?context=2)
 [8](https://old.reddit.com/r/browsers/comments/106qwyk/in_contrast_to_previous_post_what_do_you_like/j3irpx0/?context=2)
 [9](https://old.reddit.com/r/firefox/comments/115va7d/list_of_aboutconfiguserjs_privacy_tweaks/j9700bc/?context=2)
+[10](https://old.reddit.com/r/browsers/comments/11q6je7/is_block_or_snoof_browser_fingerprint_better/jc2mhcx/?context=2)
 
 ### Browser Integration
 * [Pulse Browser](https://github.com/pulse-browser/browser#%EF%B8%8F-credits) | [files](https://github.com/pulse-browser/browser/tree/alpha/src/browser/app/profile) (Dec 2021)
@@ -69,6 +69,7 @@ Apply preferences from the [common overrides](https://github.com/yokoffing/Bette
 
 ### YouTube
 * [Firefox is NOT private. Here's how to fix it.](https://youtu.be/Fr8UFJzpNls) (Mar 2023)
+* [The ULTIMATE Browser Tier List (Based Tier to Spyware Tier)](https://youtu.be/j5r6jFE8gic) (Mar 2023)
 * [I Hate Firefox. But I'm Still Switching Back to It.](https://youtu.be/w0SJFED5xK0?t=220) (Nov 2022)
 * [Español] [Optimizar y Acelerar Firefox](https://www.youtube.com/watch?v=3XtoONmq5_Q) (Nov 2022) 
 * [How To Improve Firefox Performance](https://www.youtube.com/watch?v=N8IOJiOFVEk) (Dec 2021)
@@ -77,7 +78,8 @@ Apply preferences from the [common overrides](https://github.com/yokoffing/Bette
 * [GhoSTORIES with Franz & Pete](https://anchor.fm/ghostories/episodes/S2E6-We-Talking-Ghostery-Dawn----Again-er0q02/a-a4o5vmh), S2|E6, 17:05-18:40 (Feb 2021)
     
 ### Articles
-* [2023 Browser Showdown: Comparing Chrome, Brave, Firefox, Vivaldi, and Opera – Is it Worth the Switch?](https://www.appdate.lk/technology/2023-browser-showdown/)
+* [Russian] [The Pulse Browser project develops an experimental fork of Firefox](https://www.opennet.ru/opennews/art.shtml?num=59076) (May 2023)
+* [2023 Browser Showdown: Comparing Chrome, Brave, Firefox, Vivaldi, and Opera – Is it Worth the Switch?](https://www.appdate.lk/technology/2023-browser-showdown/) (Jan 2023)
 
 ### Guides
 * [FMHY Browser Tools: Privacy Hardened Firefox](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/storage/#wiki_privacy_hardened_firefox)
