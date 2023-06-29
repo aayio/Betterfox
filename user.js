@@ -259,6 +259,12 @@ user_pref("browser.aboutConfig.showWarning", false);
 user_pref("mousewheel.with_meta.action", 1);
 user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
+// PREF: restore Firefox accounts
+user_pref("identity.fxaccounts.enabled", true);
+
+// PREF: Push API seems to be needed for Sync
+user_pref("dom.push.enabled", true);
+
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
