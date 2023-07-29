@@ -3,7 +3,7 @@
  * Peskyfox                                                                 *
  * "Aquila non capit muscas"                                                *
  * priority: remove annoyances                                              *
- * version: 112                                                             *
+ * version: 115a                                                            *
  * url: https://github.com/yokoffing/Betterfox                              *
  ***************************************************************************/
 
@@ -28,7 +28,9 @@ user_pref("app.update.suppressPrompts", true);
 user_pref("browser.compactmode.show", true);
 
 // PREF: Mozilla VPN
+// [1] https://github.com/yokoffing/Betterfox/issues/169
 user_pref("browser.privatebrowsing.vpnpromourl", "");
+    //user_pref("browser.vpn_promo.enabled", false);
 
 // PREF: disable about:addons' Recommendations pane (uses Google Analytics)
 user_pref("extensions.getAddons.showPane", false); // HIDDEN
@@ -97,26 +99,12 @@ user_pref("browser.privatebrowsing.enable-new-indicator", false);
 // PREF: disable always using dark theme for private browsing windows [FF106+]
 //user_pref("browser.theme.dark-private-windows", false);
 
-// PREF: Cookie Banner handling [NIGHTLY]
-// [NOTE] Feature still enforces Total Cookie Protection to limit 3rd-party cookie tracking [1]
-// [1] https://github.com/mozilla/cookie-banner-rules-list/issues/33#issuecomment-1318460084
-// [2] https://phabricator.services.mozilla.com/D153642
-// [3] https://winaero.com/make-firefox-automatically-click-on-reject-all-in-cookie-banner-consent/
-// [4] https://docs.google.com/spreadsheets/d/1Nb4gVlGadyxix4i4FBDnOeT_eJp2Zcv69o-KfHtK-aA/edit#gid=0
-// 2: reject banners if it is a one-click option; otherwise, fall back to the accept button to remove banner
-// 1: reject banners if it is a one-click option; otherwise, keep banners on screen
-// 0: disable all cookie banner handling
-//user_pref("cookiebanners.service.mode", 2);
-//user_pref("cookiebanners.service.mode.privateBrowsing", 2);
-    //user_pref("cookiebanners.bannerClicking.enabled", true); // DEFAULT [FF108]
-    //user_pref("cookiebanners.cookieInjector.enabled", true); // DEFAULT
-
-// PREF: enable global CookieBannerRules
-// This is used for click rules that can handle common Consent Management Providers (CMP)
-// [WARNING] Enabling this (when the cookie handling feature is enabled) may
-// negatively impact site performance since it requires us to run rule-defined
-// query selectors for every page
-//user_pref("cookiebanners.service.enableGlobalRules", enable);
+// PREF: Firefox Translations [NIGHTLY ONLY]
+// Visit about:translations to translate your own text as well
+// [1] https://blog.nightly.mozilla.org/2023/06/01/firefox-translations-and-other-innovations-these-weeks-in-firefox-issue-139/
+//user_pref("browser.translations.enable", true); // DEFAULT
+    //user_pref("browser.translations.autoTranslate", true);
+    //user_pref("browser.translations.alwaysTranslateLanguages", "");
 
 /****************************************************************************
  * SECTION: FONT APPEARANCE                                                 *
@@ -178,8 +166,8 @@ user_pref("browser.urlbar.unitConversion.enabled", true);
 // default=10, disable=0
 //user_pref("browser.urlbar.maxRichResults", 1);
 
-// PREF: show search query in URL bar instead of URL upon navigation
-//user_pref("browser.urlbar.showSearchTerms.enabled", true); // DEFAULT
+// PREF: do not show search terms in address bar instead of the URL [FF113+]
+//user_pref("browser.urlbar.showSearchTerms.enabled", false);
 
 /****************************************************************************
  * SECTION: AUTOPLAY                                                        *
@@ -411,6 +399,27 @@ user_pref("browser.bookmarks.openInTabClosesMenu", false);
 //user_pref("dom.disable_open_during_load", true); // DEFAULT
 //user_pref("privacy.popups.showBrowserMessage", true); // DEFAULT
 
+// PREF: Cookie Banner handling [NIGHTLY]
+// [NOTE] Feature still enforces Total Cookie Protection to limit 3rd-party cookie tracking [1]
+// [1] https://github.com/mozilla/cookie-banner-rules-list/issues/33#issuecomment-1318460084
+// [2] https://phabricator.services.mozilla.com/D153642
+// [3] https://winaero.com/make-firefox-automatically-click-on-reject-all-in-cookie-banner-consent/
+// [4] https://docs.google.com/spreadsheets/d/1Nb4gVlGadyxix4i4FBDnOeT_eJp2Zcv69o-KfHtK-aA/edit#gid=0
+// 2: reject banners if it is a one-click option; otherwise, fall back to the accept button to remove banner
+// 1: reject banners if it is a one-click option; otherwise, keep banners on screen
+// 0: disable all cookie banner handling
+user_pref("cookiebanners.service.mode", 2);
+user_pref("cookiebanners.service.mode.privateBrowsing", 2);
+    //user_pref("cookiebanners.bannerClicking.enabled", true); // DEFAULT [FF108]
+    //user_pref("cookiebanners.cookieInjector.enabled", true); // DEFAULT
+
+// PREF: enable global CookieBannerRules
+// This is used for click rules that can handle common Consent Management Providers (CMP)
+// [WARNING] Enabling this (when the cookie handling feature is enabled) may
+// negatively impact site performance since it requires us to run rule-defined
+// query selectors for every page
+//user_pref("cookiebanners.service.enableGlobalRules", enable);
+
 /****************************************************************************
  * SECTION: UNCATEGORIZED                                                   *
 ****************************************************************************/
@@ -428,7 +437,8 @@ user_pref("browser.bookmarks.openInTabClosesMenu", false);
 //user_pref("browser.backspace_action", 2); // DEFAULT
 
 // PREF: Disable ALT key toggling the menu bar
-//user_pref("ui.key.menuAccessKey", 0);
+//user_pref("ui.key.menuAccessKeyFocuses", false);
+    //user_pref("ui.key.menuAccessKey", 18); // DEFAULT
 
 // PREF: CTRL+TAB cycles tabs in chronological order instead of recently-
 // used order

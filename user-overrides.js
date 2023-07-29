@@ -13,28 +13,22 @@
 /****************************************************************************
  * START: MY OVERRIDES                                                      *
 ****************************************************************************/
-/** Enter your personal prefs below this line ***/
-
-/** SETUP ON FIRST INSTALLATION ***/
-// Select one:
-user_pref("network.trr.uri", "https://dns.nextdns.io/******/Firefox"); // DoH - NextDNS
-user_pref("https://dns.controld.com/******"); // DoH - ControlD
 
 /** FASTFOX ***/
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 user_pref("browser.sessionstore.interval", 50000); // 5 min.; set minimum interval between session save operations
-user_pref("gfx.webrender.compositor.force-enabled", true); // enforce
-user_pref("layers.gpu-process.force-enabled", true); // enforce
-user_pref("media.hardware-video-decoding.force-enabled", true); // enforce
 user_pref("media.av1.enabled", false); // disable AV1 to force video hardware decoding
 user_pref("network.http.pacing.requests.min-parallelism", 18); // default=6
 user_pref("network.dnsCacheEntries", 20000); // maximum # of DNS entries
-user_pref("network.dnsCacheExpiration", 86400); // keep DNS entries for 24 hours
-user_pref("network.dnsCacheExpirationGracePeriod", 240); // 4 minutes
+//user_pref("network.dnsCacheExpiration", 86400); // keep DNS entries for 24 hours
+//user_pref("network.dnsCacheExpirationGracePeriod", 240); // 4 minutes
 user_pref("network.http.speculative-parallel-limit", 18); // default=6
-//user_pref("network.dns.disablePrefetch", false);
-    //user_pref("network.dns.disablePrefetchFromHTTPS", false);
-//user_pref("network.prefetch-next", true);
+user_pref("network.dns.disablePrefetch", false);
+    user_pref("network.dns.disablePrefetchFromHTTPS", false);
+user_pref("network.early-hints.enabled", true);
+    user_pref("network.early-hints.preconnect.enabled", true);
+    user_pref("network.early-hints.preconnect.max_connections", 20); // Nightly=10
+user_pref("network.prefetch-next", true);
 user_pref("network.predictor.enabled", true);
 user_pref("network.predictor.enable-prefetch", true);
 user_pref("network.predictor.enable-hover-on-ssl", true);
@@ -52,8 +46,9 @@ user_pref("browser.urlbar.groupLabels.enabled", false); // hide Firefox Suggest 
 //user_pref("signon.rememberSignons", false); // Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites
 user_pref("signon.management.page.breach-alerts.enabled", false); // extra hardening
 user_pref("signon.generation.enabled", false); // unselect "Suggest and generate strong passwords" for clean UI
+user_pref("signon.firefoxRelay.feature", "unavailable"); // unselect suggestions from Firefox Relay for clean UI
 user_pref("privacy.sanitize.sanitizeOnShutdown", true); // clear browsing data on shutdown
-user_pref("privacy.clearOnShutdown.offlineApps", true); // Site Data
+user_pref("privacy.clearOnShutdown.offlineApps", true); // clear Site Data on shutdown
 user_pref("browser.safebrowsing.downloads.enabled", false); // deny SB to scan downloads to identify suspicious files; local checks only
 user_pref("browser.safebrowsing.downloads.remote.url", ""); // enforce no remote checks for downloads by SB
 user_pref("browser.safebrowsing.downloads.remote.block_potentially_unwanted", false); // clean up UI; not needed in user.js if remote downloads are disabled
@@ -63,7 +58,6 @@ user_pref("dom.push.enabled", false); // disable Push API; breaks FF Sync
 user_pref("browser.search.update", false); // do not update opensearch engines
 user_pref("network.notify.checkForProxies", false); // skip proxy request check
 user_pref("network.trr.confirmationNS", "skip"); // skip TRR confirmation request
-user_pref("network.trr.disable-ECS", false); // TRR asks the resolver to enable EDNS Client Subnet (ECS support); set to true if some websites don't resolve
 
 /** PESKYFOX ***/
 user_pref("devtools.accessibility.enabled", false); // removes annoying "Inspect Accessibility Properties" on right-click
@@ -91,40 +85,21 @@ user_pref("general.autoScroll", false); // disable unintentional behavior for mi
 user_pref("ui.SpellCheckerUnderlineStyle", 1); // dots for spell check errors
 //user_pref("browser.tabs.loadInBackground", false); // CTRL+SHIFT+CLICK for background tabs; Settings>General>Tabs>"When you open a link, image or media in a new tab, switch to it immediately"
 user_pref("media.videocontrols.picture-in-picture.display-text-tracks.size", "small"); // PiP
+user_pref("media.videocontrols.picture-in-picture.urlbar-button.enabled", false); // PiP in address bar
 user_pref("reader.parse-on-load.enabled", false); // disable reader mode
     //user_pref("reader.color_scheme", "auto"); // match system theme for when reader is enabled
 //user_pref("browser.urlbar.openintab", true); // stay on current site and open new tab when typing in URL bar
 
 /** DELETE IF NOT NIGHTLY ***/
 user_pref("layout.css.scroll-driven-animations.enabled", true); // CSS scroll-linked animations 
-//user_pref("dom.security.sanitizer.enabled", true); // HTML Sanitizer API 
-//user_pref("privacy.clearsitedata.cache.enabled", true); // Clear-Site-Data: "cache" header
-//user_pref("dom.indexedDB.preprocessing", true); // indexedDB Preprocessing
-//user_pref("javascript.options.experimental.shadow_realms", true); // Shadowrealms
-//user_pref("javascript.options.wasm_gc", true); // Wasm GC
-//user_pref("javascript.options.wasm_function_references", true); // Wasm Function references
-//user_pref("javascript.options.experimental.import_assertions", true); // import assertions
-//user_pref("javascript.options.experimental.array_grouping", true); // Array.fromAsync JS API
-//user_pref("image.jxl.enabled", true); // JPEG XL
-user_pref("image.avif.sequence.enabled", true); // Animated AVIF
-user_pref("cookiebanners.service.mode", 2); // block cookie banners natively
-user_pref("cookiebanners.service.mode.privateBrowsing", 2); // block cookie banners natively in PB mode
 user_pref("privacy.userContext.enabled", false); // disable Containers functionality
 user_pref("browser.crashReports.unsubmittedCheck.enabled", false); // true by default on NIGHTLY
 //user_pref("browser.urlbar.suggest.quickactions", false); // Quick Actions in URL bar
 //user_pref("xpinstall.signatures.required", false); // [ESR/DEV/NIGHTLY]
-// EncryptedClientHello
-//user_pref("network.dns.echconfig.enabled", false); // disable ECH (waiting on support); ControlD will require a root CA installation to work
-//user_pref("network.dns.http3_echconfig.enabled", true); // disable ECH (waiting on support); ControlD will require a root CA installation to work
 
 /** DELETE IF NOT WINDOWS DESKTOP ***/
 user_pref("network.trr.mode", 3); // enable TRR (without System fallback)
 user_pref("pdfjs.defaultZoomValue", "125"); // DESKTOP; alt=page-width; PDF zoom level
-//user_pref("dom.webgpu.enabled", true); // enable WebGPU
-//user_pref("gfx.webgpu.force-enabled", true); // enable WebGPU
-//user_pref("dom.ipc.processCount", 12); // Shared Web Content; 12-core CPU
-//user_pref("dom.ipc.processCount.webIsolated", 12); // per-site; Isolated Web Content; 12-core CPU
-//user_pref("gfx.webrender.quality.force-subpixel-aa-where-possible", true); // font improvement
 user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
 user_pref("gfx.font_rendering.cleartype_params.cleartype_level", 100);
 user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", "");
