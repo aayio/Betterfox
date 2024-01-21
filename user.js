@@ -238,17 +238,17 @@ user_pref("findbar.highlightAll", true);
 user_pref("layout.word_select.eat_space_to_next_word", false);
 
 /****************************************************************************
+ * SECTION: SMOOTHFOX                                                       *
+****************************************************************************/
+// visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
+// Enter your scrolling overrides below this line:
+
+/****************************************************************************
  * START: MY OVERRIDES                                                      *
 ****************************************************************************/
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
-
-/****************************************************************************
- * SECTION: SMOOTHFOX                                                       *
-****************************************************************************/
-// visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
-// Enter your scrolling overrides below this line:
 
 user_pref("browser.warnOnQuitShortcut", false);
 user_pref("browser.aboutConfig.showWarning", false);
